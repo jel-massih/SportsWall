@@ -30,7 +30,7 @@ app.post('/callbacks/tag/:tagName', function(req, res) {
     for(index in updates) {
         var update = updates[index];
         if(update['object'] == "tag") {
-            processTag(tagName, update);
+            startUpdateClients(update.object_id);
         }
     }
     res.send('OK');
@@ -40,11 +40,30 @@ app.get('/', function(request, response) {
     console.log("Connected");
 });
 
-function processTag(tagName, update) {
+function processTag(tagName) {
 
-    var path = '/v1/tags/' + update.object_id + '/media/recent';
+    var path = '/v1/tags/' + tagName + '/media/recent';
     var queryString = "https://api.instagram.com" + path + "?access_token=547964693.905cf6d.83d89ef3c6c24745bbbbc52b2e20e1a8&count=5";
 
     console.log("Emitting to Sockets!!!");
-    io.sockets.emit('newImage', { updatePath: queryString, tagName: update.object_id });
+    io.sockets.emit('newImage', { updatePath: queryString, tagName: tagName });
 }
+
+var ids = {};
+var clientCheckID = 0;
+
+function startUpdateClients(tagName) {
+    clientCheckID++;
+    console.log("Sending Client Check");
+    io.sockets.emit('checkForClients', { u_id: clientCheckID, tagName: tagName });
+}
+
+io.sockets.on('connection', function (socket) {
+    socket.on('clientCallback', function (data) {
+        console.log("Client Callback");
+        if (!ids[data.u_id]) {
+            ids[data.u_id] = true;
+            processTag(data.tagName);
+        }
+    });
+});

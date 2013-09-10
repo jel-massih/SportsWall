@@ -67,6 +67,12 @@ function getParameterByName(name) {
 }
 
 var socket = io.connect('http://sportsfeed.nodejitsu.com/');
+
+socket.on('checkForClients', function(data) {
+	console.log("Recieved Client Check!");
+	socket.emit('clientCallback', {u_id: data.u_id, tagName: data.tagName});
+});
+
 socket.on('newImage', function (path) {
     imageAdded(path);
 });
