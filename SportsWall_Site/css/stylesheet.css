@@ -1,0 +1,315 @@
+/* ---- Universal ---- */
+*{
+  /*border: 1px solid red;*/
+}
+
+body{
+  padding-top: 50px;
+  background-image: url('../texture.png');
+  /*color: #fff;*/
+  height: 100%;
+  font-weight: 300;
+}
+
+p{
+  font-weight: 300;
+  color: #aaaaaa;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -40px;
+  padding: 0 0 40px;
+}
+
+.navbar-inverse {
+  font-weight: 300;
+}
+
+.btn-success{
+  background-color: #34044E;
+  border-color: #210133;
+}
+
+.btn-success:hover{
+  background-color: #510B77;
+  border-color: #34044E;
+}
+
+#footer {
+  height: 40px;
+  background-color: #222;
+  text-align: center;
+}
+
+#footer p{
+  line-height: 35px;
+  vertical-align: middle;
+  font-weight: 300;
+}
+
+.purple{
+  /*font-family: 'Roboto';*/
+  color: #510b77;
+  font-weight: 300;
+}
+
+.purple2{
+  color: #6d179c;
+}
+
+li.active{
+  background-color: #6d179c;
+}
+
+
+
+/* ---- Home/Search ---- */
+.jumbotron{
+  background-color: transparent;
+  text-align: center;
+  height: 80%;
+  padding-top: 110px;
+}
+
+#searchBarMain{
+  width: 75%;
+  padding-top:10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+	margin-bottom:10px;
+}
+
+#searchBarMainInput{
+  display: inline-block;
+  width: 85%;
+  float: left;
+}
+
+#searchBarMainButton{
+  width: 13%;
+  display: inline-block;
+  float: right;
+}
+
+
+
+
+/* ---- Title Pages ---- */
+.banner{
+  padding-top: 0px;
+  height: 200px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+#gallery{
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tiles{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.twit {
+	height:150px;
+	width:150px;
+	background-color: #510b77;
+	font-size:14px;
+	border:1px solid white;
+	padding:5px;
+	overflow:hidden;
+	color:#FFF;
+}
+
+h8 {
+	color#fff;
+}
+
+#twittertiles{
+  margin-left: auto;
+  margin-right: auto;
+  margin: 1px;
+}
+.twitterbox{
+  float: left;
+  height: 175px;
+  width: 148px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  background-color: #2cbde2;
+  padding: 5px;
+
+}
+
+.twitterbox:hover{
+  background-color: #66caeb;
+}
+
+.twitterhandle{
+  color: #6d179c;
+  font-weight: 300;
+}
+
+
+/* ---- About ---- */
+.panel-group{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.panel-heading{
+  background-color: red;
+}
+
+.panel-default > .panel-heading {
+  color: #999;
+  background-color: #222;
+}
+
+.panel-title{
+  font-weight: 300;
+}
+
+
+
+
+.myNav{
+  background-color: #222;
+}
+
+.outlineUpdates{
+  border: 4px solid red;
+  background-color: #222;
+}
+
+.updates{
+  display: inline-block;
+  text-align: center;
+  font-weight: 300;
+  color: #bbbbbb;
+}
+
+#team1, #team2{
+  width: 49%;
+  margin-top: 10px;
+}
+
+#score, #location{
+  width: 100%;
+}
+
+#gameUpdates{
+  border: 2px solid #510b77;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 48%;
+  display: inline-block;
+  background-color: #222;
+  opacity: .5;
+}
+
+/*.backgroundfade{
+  position: fixed;
+  height: 74px;
+  background-color: #222;
+  opacity: .5;
+  border-color: transparent;
+  border-radius: 5px;
+  z-index: -1;
+}*/
+
+.floatright{
+  float: right;
+  opacity: 1;
+  z-index: 1;
+  position: fixed;
+  margin-left: -60px;
+  padding-top: 12px;
+}
+
+.floatleft{
+  float: left;
+  opacity: 1;
+  z-index: 1;
+  position: fixed;
+  padding-left: 10px;
+  padding-top: 12px;
+}
+
+
+
+
+.gallery {
+	margin-top:10px;
+}
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+.loading {
+	margin-left:auto;
+	margin-right:auto;
+	width:400px;
+	text-align:center;
+	font-size:24px;
+}

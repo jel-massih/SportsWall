@@ -1,0 +1,129 @@
+<html lang="en">
+  <head>
+    <title>SportsStream | Instagram</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <!-- Additional CSS -->
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+    <style>
+      body{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+      }
+    </style>
+    
+    <script type="application/javascript">
+		function searchTag() {
+			window.location.assign("instagram.html?tag="+document.getElementById("searchBarMainInput").value)
+		}
+    </script>
+
+    <!-- JS, etc. -->
+    <meta name="viewport" content="width=device-width, user-scalable=false;">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css"/>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/socket.io"></script>
+    <script type="text/javascript" src="js/javascript.js"></script>
+    <script type="text/javascript" src="js/img-element.js"></script>
+
+    <script type="text/javascript">
+    function autoScroll() {
+        var div = document.getElementById("gallery");
+        div.style.display = '';
+        var top = div.offsetTop;
+        if(window.scrollTop != top)
+            window.scrollTo(0, top);
+    }
+    function loadAutoScroll() {
+        autoScroll();
+        window.onload = null;
+        return false;
+    }
+    function scrollAutoScroll() {
+        autoScroll();
+        window.setTimeout(function(){ window.onscroll = null; }, 100);
+        return false;
+    }
+    window.onload = loadAutoScroll;
+    window.onscroll = scrollAutoScroll;
+
+        $(document).ready(function(){
+        $(".fancybox").fancybox({
+          helpers : {
+            title: {
+              type: 'over'
+            }
+          }
+        });
+
+            var $container = $('#tiles');
+        $container.isotope({
+          itemSelector: '.element'
+        });
+        getData();
+        });
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body style="">
+
+    <div id="wrap">
+
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><span class="purple2">SportsStream</span></a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="instagram.html?tag=celtics">Instagram</a></li><!--
+                <li><a href="stream.html?tag=celtics">Stream</a></li>
+                <li><a href="twitter.html?tag=celtics">Twitter</a></li>-->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="container">
+          <div id="searchBarMain" >
+            <input id="searchBarMainInput" type="text" class="form-control" placeholder="Search...">
+            <input id="searchBarMainButton" type="button" class="btn btn-success" value="Go!" onClick="searchTag();">
+          </div>
+          <!-- <h1><span class="purple">Catherson's Project Name</span></h1> --><p>.</p>
+          <p></p>
+        </div>
+      </div>
+
+      <div id="gallery" class="container">
+        <div id="tiles">
+        </div>
+        <div id="loading" class="loading">
+          <p>Loading More Entries...</p>
+        </div>
+      </div>
+    </div>
+     <div id="footer">
+        <div class="container">
+          <p class="text-muted credit">© Steverine 2013</p>
+        </div>
+      </div>
+  </body>
+  <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+</html>

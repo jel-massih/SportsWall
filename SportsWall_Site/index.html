@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SportsStream | Home</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+    <style>
+      body{
+        font-family: 'Roboto', Serif;
+        font-weight: 300;
+      }
+    </style>
+    
+    <script type="application/javascript">
+		function searchTag() {
+			window.location.assign("instagram.html?tag="+document.getElementById("searchBarMainInput").value)
+		}
+    </script>
+  </head>
+
+  <body style="">
+
+    <div id="wrap">
+      <div class="jumbotron">
+        <div class="container">
+          <h1><span class="purple">SportsStream</span></h1>
+          <p>Can't make it to the game and want to keep up to date with what's happening? Do you find that social media is crowded with unimportant material? Try INSERTNAME to get back to the game.<!-- Can't make it to the game and want to keep up to date with what's happening? Tired of pesky commercials during the broadcast?  Try out PRODUCTNAMEHERE today and stream social media posts for what's currently happening! --></p>
+          <div id="searchBarMain">
+            <input id="searchBarMainInput" type="text" class="form-control" placeholder="Search...">
+            <input id="searchBarMainButton" type="button" class="btn btn-success" value="Go!" onClick="searchTag();">
+          </div>
+        </div>
+      </div>
+    </div>
+     <div id="footer">
+        <div class="container">
+          <p class="text-muted credit">© Steverine 2013</p>
+        </div>
+      </div>
+  </body>
+  <script src="bootstrap/assets/js/jquery.js"></script>
+  <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+</html>
