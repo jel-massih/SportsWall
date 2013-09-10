@@ -3,6 +3,4 @@ SportsWall
 
 Social Media Sporting Event Aggregator
 
-Roadmap:
-
-- 
+Site Live at: http://jel-massih.com/TestingServer/SportsWall/
